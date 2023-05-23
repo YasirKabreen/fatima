@@ -1,5 +1,3 @@
-import 'package:fatima_hassan/mainhome.dart';
-import 'package:fatima_hassan/screens/time.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';

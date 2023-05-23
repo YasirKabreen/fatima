@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:translator/translator.dart';
 
 class Colrs extends StatefulWidget {
@@ -46,7 +44,7 @@ class _ColrsState extends State<Colrs> {
     });
     return Text(
       arabic,
-      style: TextStyle(fontSize: 30),
+      style: const TextStyle(fontSize: 30),
     );
   }
 
@@ -54,8 +52,8 @@ class _ColrsState extends State<Colrs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             Text(
               'C',
               style: TextStyle(fontSize: 40, color: Colors.amber),
@@ -90,19 +88,22 @@ class _ColrsState extends State<Colrs> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text(
+                          SelectableText(
                             tim1[index],
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 30, color: Colors.deepOrangeAccent),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Text(
-                        tim2[index],
-                        style: TextStyle(fontSize: 18, color: Colors.blueGrey),
+                      FittedBox(
+                        child: SelectableText(
+                          tim2[index],
+                          style: const TextStyle(
+                              fontSize: 18, color: Colors.blueGrey),
+                        ),
                       ),
                     ],
                   ),

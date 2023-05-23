@@ -10,23 +10,60 @@ import 'package:fatima_hassan/screens/technology.dart';
 import 'package:fatima_hassan/screens/time.dart';
 import 'package:fatima_hassan/screens/transportation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class MainHome extends StatelessWidget {
-  MainHome({Key? key}) : super(key: key);
+class MainHome extends StatefulWidget {
+  const MainHome({Key? key}) : super(key: key);
+
+  @override
+  State<MainHome> createState() => _MainHomeState();
+}
+
+class _MainHomeState extends State<MainHome> {
   List<Widget> categories = [
-    Time(),
-    Clothing(),
-    Food(),
-    Animals(),
-    Sports(),
-    Technology(),
-    Nature(),
-    Occupations(),
-    Transportation(),
-    BodyParts(),
-    Colrs(),
+    const Time(),
+    const Clothing(),
+    const Food(),
+    const Animals(),
+    const Sports(),
+    const Technology(),
+    const Nature(),
+    const Occupations(),
+    const Transportation(),
+    const BodyParts(),
+    const Colrs(),
+    // music(),
+    // movies(),
+    // science(),
+    // history(),
+    // languages(),
+    // emotions(),
+    // relationships(),
+    // shapes(),
+    // numbers(),
+    // weather(),
+    // books(),
+    // hobbies(),
+    // countries(),
+    // art(),
+    // games(),
+    // celebrities(),
+    // fruits(),
+    // vegetables(),
+    // school(),
+    // travel(),
+  ];
+  List<String> catname = [
+    'Time',
+    'Clothing',
+    'Food',
+    'Animals',
+    'Sports',
+    'Technology',
+    'Nature',
+    'Occupations',
+    'Transportation',
+    'BodyParts',
+    'Colors',
     // music(),
     // movies(),
     // science(),
@@ -53,8 +90,8 @@ class MainHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             Text(
               'FH',
               style: TextStyle(fontSize: 40, color: Colors.amber),
@@ -70,7 +107,7 @@ class MainHome extends StatelessWidget {
       ),
       backgroundColor: Colors.pink,
       body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 3 / 2,
             crossAxisSpacing: 10,
@@ -93,7 +130,7 @@ class MainHome extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   child: Center(
                     child: Text(
-                      categories[index].toString(),
+                      catname[index],
                       style:
                           const TextStyle(fontSize: 25, color: Colors.blueGrey),
                     ),
@@ -102,7 +139,7 @@ class MainHome extends StatelessWidget {
               ),
             );
           },
-          itemCount: 10),
+          itemCount: 11),
     );
   }
 }

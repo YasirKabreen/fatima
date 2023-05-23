@@ -1,9 +1,5 @@
-import 'dart:ffi';
-
 import 'package:fatima_hassan/mainhome.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({Key? key}) : super(key: key);
@@ -17,13 +13,13 @@ class MyHome extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => MainHome(),
+                builder: (context) => const MainHome(),
               ));
         },
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          child: Column(
+          child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -34,7 +30,7 @@ class MyHome extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'FH',
                       style: TextStyle(
@@ -51,14 +47,14 @@ class MyHome extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 4,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: Center(
                     child: Column(
-                      children: const [
+                      children: [
                         Text(
                           'Learn English effortlessly with our  ',
                           style: TextStyle(

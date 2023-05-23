@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:translator/translator.dart';
 
 class Transportation extends StatefulWidget {
@@ -46,7 +44,7 @@ class _TransportationState extends State<Transportation> {
     });
     return Text(
       arabic,
-      style: TextStyle(fontSize: 30),
+      style: const TextStyle(fontSize: 30),
     );
   }
 
@@ -54,8 +52,8 @@ class _TransportationState extends State<Transportation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             Text(
               'T',
               style: TextStyle(fontSize: 40, color: Colors.amber),
@@ -90,19 +88,22 @@ class _TransportationState extends State<Transportation> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text(
+                          SelectableText(
                             tim1[index],
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 30, color: Colors.deepOrangeAccent),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Text(
-                        tim2[index],
-                        style: TextStyle(fontSize: 18, color: Colors.blueGrey),
+                      FittedBox(
+                        child: SelectableText(
+                          tim2[index],
+                          style: const TextStyle(
+                              fontSize: 18, color: Colors.blueGrey),
+                        ),
                       ),
                     ],
                   ),
